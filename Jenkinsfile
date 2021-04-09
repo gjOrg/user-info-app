@@ -5,7 +5,8 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'svn --version'
-                sh 'nohup node userapp.js  --env=dev &'
+               // sh 'nohup node userapp.js  --env=dev &'
+                sh 'uid=A795252 nohup npm start &'
                 sh 'sleep 2m'
             }
         }
