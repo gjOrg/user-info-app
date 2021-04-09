@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
+#RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -19,6 +19,8 @@ RUN mkdir dist
 COPY dist ./dist
 COPY userapp.js .
   
+RUN npm install
+
 EXPOSE 8089
 #CMD [ "node", "userapp.js" ]
 #CMD node userapp.js  --env=${env}
