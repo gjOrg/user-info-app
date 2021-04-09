@@ -18,7 +18,7 @@ RUN npm install
 RUN mkdir dist
 COPY dist ./dist
 COPY userapp.js .
-
+  
 EXPOSE 8089
 #CMD [ "node", "userapp.js" ]
 #CMD node userapp.js  --env=${env}
