@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 //sh 'svn --version'
-               sh 'nohup node userapp.js  --env=dev &'
+               sh 'node userapp.js'
                 //sh 'nohup node start'
                sh 'sleep 1m'
                 sh 'curl -v http://localhost:8089'
