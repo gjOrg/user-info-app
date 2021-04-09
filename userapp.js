@@ -15,12 +15,12 @@ console.log("Environment :", args.env);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var propertiesReader = require('properties-reader');
-var propertiesPath = path.join(__dirname, '/dist/properties/', args.env + '.properties');
-console.log(propertiesPath);
-var properties = propertiesReader(propertiesPath);
+//var propertiesReader = require('properties-reader');
+//var propertiesPath = path.join(__dirname, '/dist/properties/', args.env + '.properties');
+//console.log(propertiesPath);
+//var properties = propertiesReader(propertiesPath);
 
-console.log('server.port', properties.get('server.port'));
+//console.log('server.port', properties.get('server.port'));
 app.use(express.static(path.join(__dirname, '/dist/app')));
 // An api endpoint that returns a short list of items
 app.get('/api/getList', (req, res) => {
