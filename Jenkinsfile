@@ -1,9 +1,7 @@
 def dockerImage
 
 pipeline {
-    agent { 
-    label 'sideCarApproach'
-     }
+    agent any
     stages {
         stage('Test') {
             steps {
