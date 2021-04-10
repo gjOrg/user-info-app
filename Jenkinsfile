@@ -18,10 +18,10 @@ pipeline {
                     env.BRANCH_NAME = commit.GIT_BRANCH.replace('origin/', '')
 
                    
-                     def testImage = docker.build("test-image", ".","--build-arg v1.0")
+                     def testImage = docker.build("test-image", ".")
               		 sh 'echo done'
                }
-            }
+            } 
         }
     }
 }
