@@ -23,7 +23,7 @@ pipeline {
                         + " --build-arg MY_ARG=myArg"
                         + " ."
                     )
-               
+               sh 'echo done'
                
             }
         }
