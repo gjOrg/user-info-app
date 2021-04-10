@@ -31,13 +31,32 @@ pipeline {
 	        /* Wait until mysql service is up */
 	      //  sh 'while ! mysqladmin ping -h0.0.0.0 --silent; do sleep 1; done'
 	        /* Run some tests which require MySQL */
-	        sh "docker logs ${c.id}"
-         sh 'sleep 1m'
-          sh "docker logs ${c.id}"
+	        //sh "docker logs ${c.id}"
+       //  sh 'sleep 1m'
+         // sh "docker logs ${c.id}"
         // sh 'docker logs ${c.id}'
-        sh 'echo ganesh'
+     //   sh 'echo ganesh'
        // sh 'curl -v http://localhost:8089'
-        sh 'curl -v http://0.0.0.0:8089'
+       // sh 'curl -v http://0.0.0.0:8089'
+       
+       
+       docker.image('test-image').inside("--link ${c.id}:nde") {
+            /* Wait until mysql service is up */
+            sh 'sleep 1m'
+        }
+        docker.image('centos:7').inside("--link ${c.id}:nde") {
+            /*
+             * Run some tests which require MySQL, and assume that it is
+             * available on the host name `db`
+             */
+           // sh 'make check'
+           sh 'echo oye teri'
+           sh 'curl -v http://nde:8089'
+        }
+       
+       
+       
+       
     }
 
 
