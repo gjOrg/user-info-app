@@ -33,6 +33,7 @@ pipeline {
         /* Run some tests which require MySQL */
          sh 'sleep 1m'
         sh 'echo ganesh'
+        sh 'curl -v http://localhost:8089'
     }
 
 
