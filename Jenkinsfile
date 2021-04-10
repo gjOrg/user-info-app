@@ -33,9 +33,11 @@ pipeline {
 	        /* Run some tests which require MySQL */
 	        sh "docker logs ${c.id}"
          sh 'sleep 1m'
+          sh "docker logs ${c.id}"
         // sh 'docker logs ${c.id}'
         sh 'echo ganesh'
         sh 'curl -v http://localhost:8089'
+        sh 'curl -v http://0.0.0.0:8089'
     }
 
 
