@@ -31,9 +31,9 @@ pipeline {
 	        /* Wait until mysql service is up */
 	      //  sh 'while ! mysqladmin ping -h0.0.0.0 --silent; do sleep 1; done'
 	        /* Run some tests which require MySQL */
-	        sh 'docker logs ${c.id}'
+	        sh "docker logs ${c.id}"
          sh 'sleep 1m'
-         sh 'docker logs ${c.id}'
+        // sh 'docker logs ${c.id}'
         sh 'echo ganesh'
         sh 'curl -v http://localhost:8089'
     }
