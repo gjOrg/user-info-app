@@ -25,7 +25,7 @@ pipeline {
      				   sh 'pwd'
      				   sh 'ls -l'
      				    sh 'npm install'
-     				    sh 'node userapp.js'
+     				    sh 'nohup node userapp.js &'
                			 //sh 'nohup node start'
               			 sh 'sleep 1m'
                 		sh 'curl -v http://localhost:8089'
