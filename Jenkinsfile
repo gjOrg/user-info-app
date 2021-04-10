@@ -24,6 +24,7 @@ pipeline {
      				   sh 'echo test'
      				   sh 'pwd'
      				   sh 'ls -l'
+     				    sh 'npm install'
      				    sh 'node userapp.js'
                			 //sh 'nohup node start'
               			 sh 'sleep 1m'
