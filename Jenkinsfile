@@ -23,6 +23,7 @@ pipeline {
                       testImage.inside('-p 8089:8089 -v /tmp:/tmp') {
      				   sh 'echo test'
      				   sh 'pwd'
+     				   sh 'ls -l'
      				    sh 'node userapp.js'
                			 //sh 'nohup node start'
               			 sh 'sleep 1m'
