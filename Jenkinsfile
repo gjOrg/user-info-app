@@ -19,6 +19,10 @@ pipeline {
 
                    
                      def testImage = docker.build("test-image", ".")
+                     
+                      testImage.inside('-v /tmp:/tmp') {
+     				   sh 'echo test'
+  					  }
               		 sh 'echo done'
                }
             } 
