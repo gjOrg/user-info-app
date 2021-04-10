@@ -23,5 +23,5 @@ RUN npm install
 
 EXPOSE 8089
 #CMD [ "node", "userapp.js" ]
-#CMD node userapp.js  --env=${env}
-CMD bash -C '/path/to/start.sh';'bash'
+CMD node userapp.js
+#CMD bash -C '/path/to/start.sh';'bash'
