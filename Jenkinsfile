@@ -14,7 +14,8 @@ pipeline {
               // sh 'sleep 1m'
                // sh 'curl -v http://localhost:8089'
                
-                def commit = checkout scm
+               script{
+                	def commit = checkout scm
                     // we set BRANCH_NAME to make when { branch } syntax work without multibranch job
                     env.BRANCH_NAME = commit.GIT_BRANCH.replace('origin/', '')
 
@@ -24,7 +25,7 @@ pipeline {
                         + " ."
                     )
                sh 'echo done'
-               
+               }
             }
         }
     }
