@@ -20,8 +20,14 @@ pipeline {
                    
                      def testImage = docker.build("test-image", ".")
                      
-                      testImage.inside('-v /tmp:/tmp') {
+                      testImage.inside('-p 8089:8089 -v /tmp:/tmp') {
      				   sh 'echo test'
+     				   sh 'pwd'
+     				    sh 'node userapp.js'
+               			 //sh 'nohup node start'
+              			 sh 'sleep 1m'
+                		sh 'curl -v http://localhost:8089'
+     				   
   					  }
               		 sh 'echo done'
                }
