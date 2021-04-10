@@ -17,11 +17,9 @@ pipeline {
                     // we set BRANCH_NAME to make when { branch } syntax work without multibranch job
                     env.BRANCH_NAME = commit.GIT_BRANCH.replace('origin/', '')
 
-                    dockerImage = docker.build("myimage:${env.BUILD_ID}",
-                       
-                        + " ."
-                    )
-               sh 'echo done'
+                   
+                     def testImage = docker.build("test-image", ".","--build-arg v1.0")
+              		 sh 'echo done'
                }
             }
         }
