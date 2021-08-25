@@ -21,7 +21,7 @@ COPY userapp.js .
   
 RUN npm install
 
-EXPOSE 8089
+EXPOSE 9000
 #CMD [ "node", "userapp.js" ]
 CMD node userapp.js
 #CMD bash -C '/path/to/start.sh';'bash'
