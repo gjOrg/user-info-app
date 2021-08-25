@@ -27,7 +27,7 @@ pipeline {
                    
                      def testImage = docker.build("test-image", ".")
 
-	                     docker.image("test-image").withRun('-p 8089:8089 -v /tmp:/tmp') { c ->
+	                     docker.image("test-image").withRun('-p 9000:9000 -v /tmp:/tmp') { c ->
 	        /* Wait until mysql service is up */
 	      //  sh 'while ! mysqladmin ping -h0.0.0.0 --silent; do sleep 1; done'
 	        /* Run some tests which require MySQL */
@@ -51,7 +51,7 @@ pipeline {
              */
            // sh 'make check'
            sh 'echo oye teri'
-           sh 'curl -v http://nde:8089'
+           sh 'curl -v http://nde:9000'
         }
        
        
